@@ -1,0 +1,4 @@
+config/settings.py
+.env
+set_up.py
+venv/

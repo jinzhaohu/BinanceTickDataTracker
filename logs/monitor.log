@@ -1,0 +1,36 @@
+2023-11-03 17:09:20,395 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-2243' coro=<WebSocketCommonProtocol.recv() done, defined at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:502> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_release_waiter(<Future pendi...ask_wakeup()]>)() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:431]>
+2023-11-03 17:09:20,399 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-2244' coro=<Queue.get() done, defined at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\queues.py:149> wait_for=<Future cancelled> cb=[_release_waiter(<Future pendi...ask_wakeup()]>)() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:431]>
+2023-11-03 17:09:20,399 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-2245' coro=<WebSocketCommonProtocol.recv() done, defined at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:502> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_release_waiter(<Future pendi...ask_wakeup()]>)() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:431]>
+2023-11-03 17:09:20,402 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-2246' coro=<Queue.get() done, defined at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\queues.py:149> wait_for=<Future cancelled> cb=[_release_waiter(<Future pendi...ask_wakeup()]>)() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:431]>
+2023-11-03 17:09:20,402 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<trade_socket() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\modules\api.py:17> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:764]>
+2023-11-03 17:09:20,402 ERROR:Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002D3B7CDB110>
+2023-11-03 17:09:20,416 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<trade_socket() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\modules\api.py:17> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:764]>
+2023-11-03 17:09:20,420 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<daily_tasks() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\main.py:49> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-03 17:09:20,421 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<monitor() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\main.py:30> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()]>>
+2023-11-03 17:09:20,421 ERROR:Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002D3B804E210>
+2023-11-03 17:09:20,421 ERROR:Task was destroyed but it is pending!
+task: <Task cancelling name='Task-11' coro=<WebSocketCommonProtocol.transfer_data() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:963> wait_for=<Future cancelled> cb=[Task.task_wakeup()]>
+2023-11-03 17:09:20,421 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-12' coro=<WebSocketCommonProtocol.keepalive_ping() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:1254> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-03 17:09:20,421 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-13' coro=<WebSocketCommonProtocol.close_connection() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:1301> wait_for=<Task cancelling name='Task-11' coro=<WebSocketCommonProtocol.transfer_data() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:963> wait_for=<Future cancelled> cb=[Task.task_wakeup()]>>
+2023-11-03 17:09:20,421 ERROR:Task was destroyed but it is pending!
+task: <Task cancelling name='Task-17' coro=<WebSocketCommonProtocol.transfer_data() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:963> wait_for=<Future cancelled> cb=[Task.task_wakeup()]>
+2023-11-03 17:09:20,421 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-18' coro=<WebSocketCommonProtocol.keepalive_ping() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:1254> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-03 17:09:20,421 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-19' coro=<WebSocketCommonProtocol.close_connection() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:1301> wait_for=<Task cancelling name='Task-17' coro=<WebSocketCommonProtocol.transfer_data() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:963> wait_for=<Future cancelled> cb=[Task.task_wakeup()]>>
+2023-11-03 17:09:20,428 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-15' coro=<ReconnectingWebsocket._read_loop() done, defined at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\streams.py:123> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-03 17:09:20,428 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-21' coro=<ReconnectingWebsocket._read_loop() done, defined at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\streams.py:123> wait_for=<Future pending cb=[Task.task_wakeup()]>>
