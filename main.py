@@ -7,7 +7,7 @@ from modules.api import trade_socket
 from modules.plotter import plot_daily_candlestick
 from modules.reporter import send_daily_report, report_error
 from modules.database import get_file_paths, save_trade_data
-from config.settings import SYMBOLS
+from config.settings_local import SYMBOLS
 
 # Set up logging
 logging.basicConfig(filename='logs/monitor.log', level=logging.INFO, format='%(asctime)s %(levelname)s:%(message)s')

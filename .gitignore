@@ -1,4 +1,4 @@
-config/settings.py
+config/settings_local.py
 .env
 set_up.py
 venv/

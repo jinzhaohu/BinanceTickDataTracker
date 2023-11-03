@@ -2,7 +2,7 @@
 
 import smtplib
 from email.message import EmailMessage
-from config.settings import EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
+from config.settings_local import EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 
 def send_email(subject, body, to_emails, attachment_path=None):
     """Send an email with an optional attachment."""
