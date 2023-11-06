@@ -67,7 +67,7 @@ If you have any questions or suggestions, feel free to contact me:
 - **Name:** Jinzhao Hu (Jin)
 - **Email:** jin.hk.hu@gmail.com
 
-Project Link: 
+Project Link: https://github.com/jinzhaohu/BinanceTickDataTracker
 
 ## Acknowledgements
 
