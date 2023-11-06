@@ -15,5 +15,5 @@ async def trade_socket(symbol):
     async with ts as tscm:
         while True:
             res = await tscm.recv()
-            print(res)  # For testing, you'll see trades in real-time
+            #print(res)  # For testing, you'll see trades in real-time
             await save_trade_data(symbol, res)  # Save trade data to file

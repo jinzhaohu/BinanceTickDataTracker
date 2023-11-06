@@ -1,4 +1,4 @@
-# Binance Tick Data Monitor
+# Binance Tick Data Tracker
 
 This project is designed to monitor and record tick trade data for selected cryptocurrencies on Binance, create and save daily candlestick charts, and send daily reports via email. It's set up to run on an AWS EC2 instance continuously.
 
