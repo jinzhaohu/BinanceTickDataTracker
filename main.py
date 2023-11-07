@@ -7,13 +7,10 @@ from modules.api import trade_socket
 from modules.plotter import plot_daily_candlestick
 from modules.reporter import send_daily_report, report_error
 from modules.database import get_file_paths, save_trade_data
-from config.settings_local import SYMBOLS
+from config.settings import SYMBOLS
 
 # Set up logging
 logging.basicConfig(filename='logs/monitor.log', level=logging.INFO, format='%(asctime)s %(levelname)s:%(message)s')
-
-# Define the symbols to monitor
-SYMBOLS = ['BTCUSDT', 'ETHUSDT']  # Example symbols
 
 async def monitor():
     """
@@ -46,7 +43,7 @@ async def daily_tasks(target_time):
     last_run_date = None
     while True:
         # Schedule to run every 24 hours
-        await asyncio.sleep(24*60*60)  # Sleep for 24 hours
+        # await asyncio.sleep(24*60*60)  # Sleep for 24 hours
         date_str = datetime.utcnow().strftime('%Y%m%d')
         # Get the current time in UTC
         now = datetime.utcnow()
@@ -55,18 +52,25 @@ async def daily_tasks(target_time):
                     try:
                         logging.info("Running daily tasks...")
                         # Plot and report for each symbol
+                        all_attachment_paths = []
+
                         for symbol in SYMBOLS:
                             jsonl_path, csv_path = get_file_paths(symbol)
                             plot_daily_candlestick(symbol, jsonl_path)
                             chart_path = f'data/{symbol}_{date_str}_candlestick.png'
-                            send_daily_report(chart_path)
+                            # Here, add all the relevant paths for this symbol to the list
+                            all_attachment_paths.extend([chart_path, csv_path, jsonl_path])
+
+                        # After the loop, send a single email with all attachments
+                        send_daily_report(all_attachment_paths)
                         # Clean up old data files
                         cleanup_data_files()
+                        last_run_date = now.date()
                     except Exception as e:
                         logging.error("An error occurred during daily tasks", exc_info=True)
                         report_error(str(e))
         # Wait for some time before checking again
-        await asyncio.sleep(300)  # Check every 5 minutes
+        await asyncio.sleep(60*60)  # Check every 1 hour
 
 def cleanup_data_files():
     """

@@ -2,22 +2,28 @@
 
 import smtplib
 from email.message import EmailMessage
-from config.settings_local import EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
+from config.settings import EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_TO
+from datetime import datetime
 
-def send_email(subject, body, to_emails, attachment_path=None):
-    """Send an email with an optional attachment."""
+def get_date_str():
+    """Get the current date as a string."""
+    return datetime.now().strftime("%Y-%m-%d")
+
+def send_email(subject, body, to_emails, attachment_paths=None):
+    """Send an email with multiple optional attachments."""
     msg = EmailMessage()
     msg['Subject'] = subject
     msg['From'] = EMAIL_HOST_USER
     msg['To'] = to_emails
     msg.set_content(body)
 
-    # Attach a file if the path is provided
-    if attachment_path:
-        with open(attachment_path, 'rb') as attachment:
-            file_data = attachment.read()
-            file_name = attachment.name
-            msg.add_attachment(file_data, maintype='application', subtype='octet-stream', filename=file_name)
+    # Attach files if paths are provided
+    if attachment_paths:
+        for attachment_path in attachment_paths:
+            with open(attachment_path, 'rb') as attachment:
+                file_data = attachment.read()
+                file_name = attachment.name
+                msg.add_attachment(file_data, maintype='application', subtype='octet-stream', filename=file_name)
 
     # Connect to the email server and send the email
     with smtplib.SMTP_SSL(EMAIL_HOST, EMAIL_PORT) as smtp:
@@ -28,12 +34,13 @@ def report_error(error):
     """Report an error via email."""
     subject = "Error Notification"
     body = f"An error has occurred: {error}\nPlease check manually."
-    to_emails = ["user@example.com"]  # Replace with your email
+    to_emails = EMAIL_TO
     send_email(subject, body, to_emails)
 
-def send_daily_report(chart_path):
-    """Send the daily candlestick chart via email."""
-    subject = "Daily Candlestick Chart"
-    body = "Please find attached the daily candlestick chart."
-    to_emails = ["user@example.com"]  # Replace with your email
-    send_email(subject, body, to_emails, chart_path)
+def send_daily_report(attachment_paths):
+    """Send the daily reports via email with multiple attachments."""
+    date_str = get_date_str()
+    subject = f"Daily Reports {date_str}"
+    body = "Please find attached the daily reports."
+    to_emails = EMAIL_TO  # Replace with your email
+    send_email(subject, body, to_emails, attachment_paths)

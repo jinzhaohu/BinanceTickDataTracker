@@ -1,7 +1,7 @@
 # modules/api.py
 
 from binance import AsyncClient, BinanceSocketManager
-from config.settings_local import BINANCE_API_KEY, BINANCE_API_SECRET
+from config.settings import BINANCE_API_KEY, BINANCE_API_SECRET
 from .database import save_trade_data
 
 async def trade_socket(symbol):

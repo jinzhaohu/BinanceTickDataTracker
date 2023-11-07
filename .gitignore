@@ -1,4 +1,7 @@
 config/settings_local.py
-.env
+config/settings.py
+logs/monitor.log
 set_up.py
+.env
+data/
 venv/

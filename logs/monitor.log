@@ -34,3 +34,247 @@ task: <Task pending name='Task-19' coro=<WebSocketCommonProtocol.close_connectio
 task: <Task pending name='Task-15' coro=<ReconnectingWebsocket._read_loop() done, defined at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\streams.py:123> wait_for=<Future pending cb=[Task.task_wakeup()]>>
 2023-11-03 17:09:20,428 ERROR:Task was destroyed but it is pending!
 task: <Task pending name='Task-21' coro=<ReconnectingWebsocket._read_loop() done, defined at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\streams.py:123> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 11:49:52,021 ERROR:An error occurred
+Traceback (most recent call last):
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py", line 30, in monitor
+    await asyncio.gather(*tasks)
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\modules\api.py", line 8, in trade_socket
+    client = await AsyncClient.create(BINANCE_API_KEY, BINANCE_API_SECRET)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7866, in create
+    await self.ping()
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7988, in ping
+    return await self._get('ping', version=self.PRIVATE_API_VERSION)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7953, in _get
+    return await self._request_api('get', path, signed, version, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7916, in _request_api
+    return await self._request(method, uri, signed, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7899, in _request
+    return await self._handle_response(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7907, in _handle_response
+    raise BinanceAPIException(response, response.status, await response.text())
+binance.exceptions.BinanceAPIException: APIError(code=0): Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.
+2023-11-07 11:50:06,975 ERROR:An error occurred
+Traceback (most recent call last):
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py", line 30, in monitor
+    await asyncio.gather(*tasks)
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\modules\api.py", line 8, in trade_socket
+    client = await AsyncClient.create(BINANCE_API_KEY, BINANCE_API_SECRET)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7866, in create
+    await self.ping()
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7988, in ping
+    return await self._get('ping', version=self.PRIVATE_API_VERSION)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7953, in _get
+    return await self._request_api('get', path, signed, version, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7916, in _request_api
+    return await self._request(method, uri, signed, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7899, in _request
+    return await self._handle_response(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7907, in _handle_response
+    raise BinanceAPIException(response, response.status, await response.text())
+binance.exceptions.BinanceAPIException: APIError(code=0): Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.
+2023-11-07 11:50:21,906 ERROR:An error occurred
+Traceback (most recent call last):
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py", line 30, in monitor
+    await asyncio.gather(*tasks)
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\modules\api.py", line 8, in trade_socket
+    client = await AsyncClient.create(BINANCE_API_KEY, BINANCE_API_SECRET)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7866, in create
+    await self.ping()
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7988, in ping
+    return await self._get('ping', version=self.PRIVATE_API_VERSION)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7953, in _get
+    return await self._request_api('get', path, signed, version, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7916, in _request_api
+    return await self._request(method, uri, signed, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7899, in _request
+    return await self._handle_response(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\client.py", line 7907, in _handle_response
+    raise BinanceAPIException(response, response.status, await response.text())
+binance.exceptions.BinanceAPIException: APIError(code=0): Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.
+2023-11-07 11:50:36,112 ERROR:Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001C829668E50>
+2023-11-07 11:50:36,113 ERROR:Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001C829744110>
+2023-11-07 11:50:36,113 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<daily_tasks() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:49> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 11:50:36,113 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<monitor() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:40> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 11:54:31,527 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-4045' coro=<WebSocketCommonProtocol.recv() done, defined at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:502> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_release_waiter(<Future pendi...ask_wakeup()]>)() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:431]>
+2023-11-07 11:54:31,535 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-4046' coro=<Queue.get() done, defined at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\queues.py:149> wait_for=<Future cancelled> cb=[_release_waiter(<Future pendi...ask_wakeup()]>)() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:431]>
+2023-11-07 11:54:31,535 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-4049' coro=<WebSocketCommonProtocol.recv() done, defined at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:502> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_release_waiter(<Future pendi...ask_wakeup()]>)() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:431]>
+2023-11-07 11:54:31,537 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-4050' coro=<Queue.get() done, defined at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\queues.py:149> wait_for=<Future cancelled> cb=[_release_waiter(<Future pendi...ask_wakeup()]>)() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:431]>
+2023-11-07 11:54:31,537 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<trade_socket() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\modules\api.py:17> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:764]>
+2023-11-07 11:54:31,537 ERROR:Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000026A8C42B310>
+2023-11-07 11:54:31,550 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<trade_socket() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\modules\api.py:17> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[gather.<locals>._done_callback() at C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\tasks.py:764]>
+2023-11-07 11:54:31,554 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<daily_tasks() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:49> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 11:54:31,554 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<monitor() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:30> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()]>>
+2023-11-07 11:54:31,554 ERROR:Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000026A8C54A750>
+2023-11-07 11:54:31,554 ERROR:Task was destroyed but it is pending!
+task: <Task cancelling name='Task-11' coro=<WebSocketCommonProtocol.transfer_data() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:963> wait_for=<Future cancelled> cb=[Task.task_wakeup()]>
+2023-11-07 11:54:31,555 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-12' coro=<WebSocketCommonProtocol.keepalive_ping() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:1254> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 11:54:31,555 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-13' coro=<WebSocketCommonProtocol.close_connection() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:1301> wait_for=<Task cancelling name='Task-11' coro=<WebSocketCommonProtocol.transfer_data() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:963> wait_for=<Future cancelled> cb=[Task.task_wakeup()]>>
+2023-11-07 11:54:31,555 ERROR:Task was destroyed but it is pending!
+task: <Task cancelling name='Task-17' coro=<WebSocketCommonProtocol.transfer_data() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:963> wait_for=<Future cancelled> cb=[Task.task_wakeup()]>
+2023-11-07 11:54:31,555 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-18' coro=<WebSocketCommonProtocol.keepalive_ping() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:1254> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 11:54:31,555 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-19' coro=<WebSocketCommonProtocol.close_connection() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:1301> wait_for=<Task cancelling name='Task-17' coro=<WebSocketCommonProtocol.transfer_data() running at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\websockets\legacy\protocol.py:963> wait_for=<Future cancelled> cb=[Task.task_wakeup()]>>
+2023-11-07 11:54:31,562 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-15' coro=<ReconnectingWebsocket._read_loop() done, defined at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\streams.py:123> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 11:54:31,562 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-21' coro=<ReconnectingWebsocket._read_loop() done, defined at C:\Users\jinzhaohu\Documents\myproject\Binance_TickData_Tracker\venv\Lib\site-packages\binance\streams.py:123> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 11:59:24,960 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() done, defined at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:42> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 12:01:06,331 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() done, defined at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:42> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 12:02:51,546 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() done, defined at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:42> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 13:51:09,832 INFO:Running daily tasks...
+2023-11-07 13:52:11,664 INFO:Running daily tasks...
+2023-11-07 13:52:26,889 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:66> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 13:55:58,614 INFO:Running daily tasks...
+2023-11-07 13:57:19,926 INFO:Running daily tasks...
+2023-11-07 13:58:28,798 INFO:Running daily tasks...
+2023-11-07 13:58:58,428 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:66> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 14:36:04,015 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() done, defined at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:39> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 14:44:52,354 INFO:Running daily tasks...
+2023-11-07 14:48:03,392 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:67> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 15:00:18,244 INFO:Running daily tasks...
+2023-11-07 15:00:26,455 ERROR:An error occurred during daily tasks
+Traceback (most recent call last):
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\modules\reporter.py", line 25, in send_email
+    smtp.send_message(msg)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 986, in send_message
+    return self.sendmail(from_addr, to_addrs, flatmsg, mail_options,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 902, in sendmail
+    (code, resp) = self.data(msg)
+                   ^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 579, in data
+    self.send(q)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 360, in send
+    self.sock.sendall(s)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1274, in sendall
+    v = self.send(byte_view[count:])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1243, in send
+    return self._sslobj.write(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py", line 59, in daily_tasks
+    send_daily_report(chart_path, csv_path, jsonl_path)
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\modules\reporter.py", line 40, in send_daily_report
+    send_email(subject, body, to_emails, attachment_paths)
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\modules\reporter.py", line 23, in send_email
+    with smtplib.SMTP_SSL(EMAIL_HOST, EMAIL_PORT) as smtp:
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 284, in __exit__
+    raise SMTPResponseException(code, message)
+smtplib.SMTPResponseException: (250, b'2.0.0 OK  1699340426 k6-20020a17090a7f0600b002807c61ca2bsm6507314pjl.26 - gsmtp')
+2023-11-07 15:01:51,596 INFO:Running daily tasks...
+2023-11-07 15:03:00,550 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:67> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 15:04:11,408 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() done, defined at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:39> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 15:05:25,565 INFO:Running daily tasks...
+2023-11-07 15:08:09,172 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:67> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 15:15:31,148 INFO:Running daily tasks...
+2023-11-07 15:15:32,299 ERROR:An error occurred during daily tasks
+Traceback (most recent call last):
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py", line 64, in daily_tasks
+    send_daily_report(all_attachment_paths)
+TypeError: send_daily_report() missing 2 required positional arguments: 'csv_path' and 'jsonl_path'
+2023-11-07 15:15:35,912 ERROR:Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<daily_tasks() done, defined at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:39> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py", line 64, in daily_tasks
+    send_daily_report(all_attachment_paths)
+TypeError: send_daily_report() missing 2 required positional arguments: 'csv_path' and 'jsonl_path'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py", line 97, in <module>
+    loop.run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py", line 70, in daily_tasks
+    report_error(str(e))
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\modules\reporter.py", line 38, in report_error
+    send_email(subject, body, to_emails)
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\modules\reporter.py", line 30, in send_email
+    smtp.login(EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 642, in auth
+    (code, resp) = self.docmd("AUTH", mechanism + " " + response)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 432, in docmd
+    return self.getreply()
+           ^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 398, in getreply
+    line = self.file.readline(_MAXLINE + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1311, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1776.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1167, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+2023-11-07 15:16:49,743 INFO:Running daily tasks...
+2023-11-07 15:16:50,367 ERROR:An error occurred during daily tasks
+Traceback (most recent call last):
+  File "C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py", line 64, in daily_tasks
+    send_daily_report(all_attachment_paths)
+TypeError: send_daily_report() missing 2 required positional arguments: 'csv_path' and 'jsonl_path'
+2023-11-07 15:17:12,403 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:72> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2023-11-07 15:25:09,255 INFO:Running daily tasks...
+2023-11-07 15:26:29,518 ERROR:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<daily_tasks() running at C:\Users\jinzhaohu\Documents\myproject\BinanceTickDataTracker\main.py:73> wait_for=<Future pending cb=[Task.task_wakeup()]>>

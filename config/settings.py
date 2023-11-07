@@ -9,5 +9,6 @@ EMAIL_HOST = 'smtp.example.com'  # Replace with your SMTP server
 EMAIL_PORT = 465  # or 587 for non-SSL
 EMAIL_HOST_USER = 'username@example.com'
 EMAIL_HOST_PASSWORD = 'mail_app_password'
+EMAIL_TO = 'username@example.com'
 
 SYMBOLS = ['BTCUSDT', 'ETHUSDT']
