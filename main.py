@@ -5,7 +5,7 @@ import glob
 from datetime import datetime, time, timedelta
 from modules.api import trade_socket
 from modules.plotter import plot_daily_candlestick
-from modules.reporter import send_daily_report, report_error
+from modules.reporter import send_daily_report_with_drive_upload, send_daily_report, report_error
 from modules.database import get_file_paths, save_trade_data
 from config.settings import SYMBOLS
 
@@ -53,16 +53,18 @@ async def daily_tasks(target_time):
                         logging.info("Running daily tasks...")
                         # Plot and report for each symbol
                         all_attachment_paths = []
-
+                        all_email_paths = []
                         for symbol in SYMBOLS:
                             jsonl_path, csv_path = get_file_paths(symbol)
                             plot_daily_candlestick(symbol, jsonl_path)
                             chart_path = f'data/{symbol}_{date_str}_candlestick.png'
                             # Here, add all the relevant paths for this symbol to the list
+                            all_email_paths.extend([chart_path])
                             all_attachment_paths.extend([chart_path, csv_path, jsonl_path])
 
                         # After the loop, send a single email with all attachments
-                        send_daily_report(all_attachment_paths)
+                        send_daily_report(all_email_paths)
+                        send_daily_report_with_drive_upload(all_attachment_paths)
                         # Clean up old data files
                         cleanup_data_files()
                         last_run_date = now.date()
