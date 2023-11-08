@@ -10,6 +10,7 @@ This project is designed to monitor and record tick trade data for selected cryp
 - Sends daily reports including status and candlestick charts via email.
 - Automatically restarts monitoring upon encountering errors with error reporting.
 - Cleans up data files older than 7 days to manage disk space.
+- Uploads daily data to Google Drive
 - (Todo) Backs up data to a secondary AWS EC2 instance.
 ## Getting Started
 
