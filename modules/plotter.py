@@ -3,7 +3,7 @@
 import json
 import pandas as pd
 import mplfinance as mpf
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def read_ticks(file_path):
@@ -48,3 +48,13 @@ def plot_daily_candlestick(symbol, file_path):
     ohlc = ticks_to_ohlc(ticks)
     date = datetime.utcnow().strftime('%Y%m%d')  # Use the current UTC date for the filename
     plot_candlestick(ohlc, symbol, date)
+
+def plot_yesterday_candlestick(symbol, file_path):
+    """Generate a daily candlestick chart from a .jsonl tick data file."""
+    ticks = read_ticks(file_path)
+    ohlc = ticks_to_ohlc(ticks)
+    date = datetime.utcnow().strftime('%Y%m%d')  # Use the current UTC date for the filename
+    now = datetime.utcnow()
+    yesterday = now - timedelta(days=1)
+    yesterday_date_str = yesterday.strftime('%Y%m%d')
+    plot_candlestick(ohlc, symbol, yesterday_date_str)

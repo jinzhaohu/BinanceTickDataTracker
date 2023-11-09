@@ -4,9 +4,9 @@ import os
 import glob
 from datetime import datetime, time, timedelta
 from modules.api import trade_socket
-from modules.plotter import plot_daily_candlestick
+from modules.plotter import plot_daily_candlestick, plot_yesterday_candlestick
 from modules.reporter import send_daily_report_with_drive_upload, send_daily_report, report_error
-from modules.database import get_file_paths, save_trade_data
+from modules.database import get_yesterday_file_paths
 from config.settings import SYMBOLS
 
 # Set up logging
@@ -45,8 +45,11 @@ async def daily_tasks(target_time):
         # Schedule to run every 24 hours
         # await asyncio.sleep(24*60*60)  # Sleep for 24 hours
         date_str = datetime.utcnow().strftime('%Y%m%d')
+
         # Get the current time in UTC
         now = datetime.utcnow()
+        yesterday = now - timedelta(days=1)
+        yesterday_date_str = yesterday.strftime('%Y%m%d')
         # If we haven't run for today and we're past the target time
         if last_run_date != now.date() and now.time() >= target_time:
                     try:
@@ -55,9 +58,9 @@ async def daily_tasks(target_time):
                         all_attachment_paths = []
                         all_email_paths = []
                         for symbol in SYMBOLS:
-                            jsonl_path, csv_path = get_file_paths(symbol)
-                            plot_daily_candlestick(symbol, jsonl_path)
-                            chart_path = f'data/{symbol}_{date_str}_candlestick.png'
+                            jsonl_path, csv_path = get_yesterday_file_paths(symbol)
+                            plot_yesterday_candlestick(symbol, jsonl_path)
+                            chart_path = f'data/{symbol}_{yesterday_date_str}_candlestick.png'
                             # Here, add all the relevant paths for this symbol to the list
                             all_email_paths.extend([chart_path])
                             all_attachment_paths.extend([chart_path, csv_path, jsonl_path])
@@ -76,9 +79,9 @@ async def daily_tasks(target_time):
 
 def cleanup_data_files():
     """
-    Delete data files older than 7 days.
+    Delete data files older than 3 days.
     """
-    cutoff_date = datetime.utcnow() - timedelta(days=7)
+    cutoff_date = datetime.utcnow() - timedelta(days=3)
     for symbol in SYMBOLS:
         for file_type in ['jsonl', 'csv']:
             # Generate the path pattern for old files

@@ -3,7 +3,7 @@
 import json
 import csv
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 DATA_DIR = 'data'
 current_date = datetime.utcnow().strftime('%Y%m%d')
@@ -13,6 +13,15 @@ def get_file_paths(symbol):
     date_str = datetime.utcnow().strftime('%Y%m%d')
     jsonl_filename = f"{symbol}_{date_str}.jsonl"
     csv_filename = f"{symbol}_{date_str}.csv"
+    return os.path.join(DATA_DIR, jsonl_filename), os.path.join(DATA_DIR, csv_filename)
+
+def get_yesterday_file_paths(symbol):
+    """Get both JSON and CSV file paths."""
+    now = datetime.utcnow()
+    yesterday = now - timedelta(days=1)
+    yesterday_date_str = yesterday.strftime('%Y%m%d')
+    jsonl_filename = f"{symbol}_{yesterday_date_str}.jsonl"
+    csv_filename = f"{symbol}_{yesterday_date_str}.csv"
     return os.path.join(DATA_DIR, jsonl_filename), os.path.join(DATA_DIR, csv_filename)
 
 def save_trade_jsonl(file_path, trade_data):
